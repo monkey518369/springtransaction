@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<configuration status="error">    
+    <Appenders>    
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+        </Console>
+        <RollingFile name="RollingFile"
+                     fileName="I:/ideal/apache-tomcat-8.0.35/logs/cctf-site.log"
+                     filePattern="I:/ideal/apache-tomcat-8.0.35/logs/cctf-site-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>  
+            <Policies>  
+                <TimeBasedTriggeringPolicy modulate="true" interval="1"/>  
+            </Policies>
+        </RollingFile>  
+    </Appenders>
+    <Loggers>
+        <root level="INFO">
+            <appender-ref ref="RollingFile"/>
+            <appender-ref ref="Console"/>
+        </root>
+        <!--
+        <Logger name="com.cdd.admin" level="INFO" additivity="false">
+            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+        -->
+    </Loggers>    
+</configuration>

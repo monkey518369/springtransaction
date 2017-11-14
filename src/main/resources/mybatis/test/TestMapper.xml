@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.monkey.test.spring.transaction.repository.TestDao">
+  <resultMap id="base" type="test" ></resultMap>
+
+  <select id="getOne"  resultMap="base">
+    SELECT t.*
+    FROM  `student` t
+    limit 1;
+  </select>
+
+  <select id="getAll"  resultMap="base">
+    SELECT t.*
+    FROM  `student` t
+  </select>
+
+  <insert id="insert" parameterType="test">
+    INSERT INTO student(id,name)
+    VALUES (#{id},#{name})
+  </insert>
+
+</mapper>
