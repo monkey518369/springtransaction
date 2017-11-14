@@ -44,6 +44,8 @@ public class TestController {
         tests.forEach(item->{
             System.out.println(item.getId());
         });
+
+        System.out.println("=======");
         return "index";
     }
 
